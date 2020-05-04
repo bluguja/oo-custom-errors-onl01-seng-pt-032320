@@ -14,6 +14,10 @@ class Person
       person.partner = self
     
   end
+     begin
+     raise YourCustomError
+     rescue YourCustomError
+end
 
 end
 
