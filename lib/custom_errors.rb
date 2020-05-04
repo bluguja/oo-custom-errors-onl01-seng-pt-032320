@@ -5,26 +5,18 @@ class Person
     @name = name
   end
 
-  def get_married(person)
+def get_married(person)
     self.partner = person
-    
     if person.class != Person
-      
       begin
-    raise YourCustomError
-  rescue YourCustomError
-  puts
-  error.message
-  
-end
-      raise PartnerError
+        raise PartnerError
+      rescue PartnerError => error
+          puts error.message
+      end
     else
       person.partner = self
-    
-  end
-     
+    end
 end
-
 end
 
 class PartnerError < StandardError
